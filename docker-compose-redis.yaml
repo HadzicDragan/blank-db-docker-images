@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+
+    redis:
+      image: "redis:alpine"
+      container_name: "redis-default"
+      ports:
+        - "6379:6379"
+      volumes:
+        - "$PWD/${REDIS_DATA}/redis-data:/var/lib/redis"
+        - "$PWD/${REDIS_CONF}/redis.conf:/usr/local/etc/redis/redis.conf"
